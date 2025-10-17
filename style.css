@@ -1,4 +1,4 @@
-/* General Setup */
+/* Base */
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +16,7 @@ body {
   align-items: center;
 }
 
-/* Glowing Background Animation */
+/* Background glow */
 .bg-glow {
   position: fixed;
   top: -50%;
@@ -60,6 +60,7 @@ header p {
 main {
   flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 90%;
@@ -106,6 +107,50 @@ main {
 .file-card .icon {
   font-size: 2.5rem;
   margin-bottom: 10px;
+}
+
+/* Floating Settings Button */
+.settings-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: rgba(60, 0, 100, 0.6);
+  color: #e7c7ff;
+  font-size: 1.8rem;
+  padding: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(162, 88, 255, 0.7);
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: 0.3s ease;
+  z-index: 10;
+}
+
+.settings-btn:hover {
+  background: rgba(150, 0, 255, 0.8);
+  box-shadow: 0 0 25px rgba(210, 155, 255, 1);
+  transform: rotate(45deg);
+}
+
+/* Floating Weapons Animation */
+.weapons-area {
+  position: relative;
+  margin-top: 60px;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.weapon {
+  font-size: 2rem;
+  text-shadow: 0 0 10px #bb86fc, 0 0 20px #9b5de5;
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
 }
 
 /* Footer */
